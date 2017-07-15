@@ -1,0 +1,15 @@
+.ss-style-triangles{
+    position: relative;
+}
+.ss-style-triangles::after {
+    bottom: -50px;
+    z-index: 10;
+    background: inherit;
+}
+.ss-style-triangles::before, .ss-style-triangles::after {
+    left: 50%;
+    width: 100px;
+    height: 100px;
+    -webkit-transform: translateX(-50%) rotate(45deg);
+    transform: translateX(-50%) rotate(45deg);
+}

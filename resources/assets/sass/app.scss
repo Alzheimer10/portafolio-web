@@ -1,9 +1,35 @@
-
 // Fonts
 @import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
-
 // Variables
 @import "variables";
-
 // Bootstrap
-@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+@import "node_modules/bootstrap/dist/css/bootstrap";
+
+.ss-style-triangles{
+    position: relative;
+}
+.ss-style-triangles::after {
+    bottom: -50px;
+    z-index: 10;
+    background: inherit;
+}
+.ss-style-triangles::before, .ss-style-triangles::after {
+    left: 50%;
+    width: 100px;
+    height: 100px;
+    -webkit-transform: translateX(-50%) rotate(45deg);
+    transform: translateX(-50%) rotate(45deg);
+}
+.ss-style-triangles::before, .ss-style-triangles::after {
+    position: absolute;
+    content: '';
+    z-index: 1;
+    pointer-events: none;
+    background-color: #666666;
+}
+.carousel-inner{
+ 	background-color: $backcolor-1;
+}
+.carousel-item img{
+ 	margin: auto;
+}
