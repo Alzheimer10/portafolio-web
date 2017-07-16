@@ -6,12 +6,8 @@
  */
 
 window.$ = window.jQuery = require('jquery');
-window.Tether = require('tether');
-
-require('bootstrap');
-
+require('../vendor/bootstrap/javascripts/bootstrap');
 window.Vue = require('vue');
-
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -21,23 +17,8 @@ window.Vue = require('vue');
 Vue.component('example', require('./components/Example.vue'));
 
 const app = new Vue({
-    el: '#app'
+  el: '#app',
+  data: {
+    message: 'Hello Vue!'
+  }
 });
-
-$(".header").click(function () {
-
-    $header = $(this);
-    //getting the next element
-    $content = $header.next();
-    //open up the content needed - toggle the slide- if visible, slide up, if not slidedown.
-    $content.slideToggle(500, function () {
-        //execute this after slideToggle is done
-        //change text of header based on visibility of content div
-        $header.text(function () {
-            //change text based on condition
-            return $content.is(":visible") ? "Collapse" : "Expand";
-        });
-    });
-
-});
-
